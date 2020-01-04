@@ -9,7 +9,7 @@ import {Book} from './model/book/book.model';
 })
 export class AppComponent implements OnInit {
   readonly LOCALSTORE_KEY: string = 'savedBooks';
-  title = 'Book Store';
+  title = 'Biblioteket';
   books: Book[];
   selectedTitle: string;  // model to solve selection
   savedBooks: Book[] = [];
