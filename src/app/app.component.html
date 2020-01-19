@@ -5,7 +5,7 @@
       <h1>{{title}}</h1>
     </div>
 
-    <input type="text" class="form-control"
+    <input type="text" class="form-control" id="search"
            placeholder="Skriv titel, författare, år etc."
            [(ngModel)]="selectedTitle" (input)="onSearchChange($event.target.value)">
 
@@ -20,7 +20,7 @@
   <div *ngIf="selectedBook" class="row">
     <div class="col-md-8">
       <h3>Titel</h3>
-      <h4>{{selectedBook.volumeInfo.title}}</h4>
+      <h4 id="bookTitle">{{selectedBook.volumeInfo.title}}</h4>
 
       <h3>Sammanfattning</h3>
       <div *ngIf="selectedBook.volumeInfo.description; then description else nodescription"></div>
@@ -36,18 +36,18 @@
         <img class="img-responsive" src="{{selectedBook.volumeInfo.imageLinks.thumbnail}}"/>
       </a>
 
-      <button class="btn btn-info btn-lg" (click)="onBookAddedToCart()">Till kassan</button>
+      <button id="addToCart" class="btn btn-info btn-lg" (click)="onBookAddedToCart()">Till kassan</button>
     </div>
   </div>
 
   <div *ngIf="savedBooks.length > 0">
     <h2>Kontrollera din beställning</h2>
-    <div *ngFor="let savedBook of savedBooks">
+    <div class="savedbook" *ngFor="let savedBook of savedBooks">
       <button type="button" class="btn btn-default btn-sm"
               (click)="onSavedBookDeleted(savedBook)">
         <span class="glyphicon glyphicon-trash"></span> Ta bort
       </button>
-      <button class="btn" (click)="onBookSelected(savedBook)">
+      <button class="btn savedbooktitle" (click)="onBookSelected(savedBook)">
         {{savedBook.volumeInfo.title}}
       </button>
     </div>
