@@ -20,9 +20,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # npm install
-      - name: Install dependencies and launch unit and e2e tests
-        run: |
-          npm install,
-          ng test,
-          ng e2e.
+      - name: Install dependencies
+        run: npm install
+      - name: Launch unit tests
+        run: ng test
+      - name: Launch e2e tests
+        run: ng e2e
