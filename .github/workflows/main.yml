@@ -22,6 +22,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+<<<<<<< HEAD
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
@@ -31,3 +32,11 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+=======
+      - name: Install dependencies
+        run: npm install
+      - name: Launch unit tests
+        run: ng test
+      - name: Launch e2e tests
+        run: ng e2e
+>>>>>>> 5da1757... Update main.yml
