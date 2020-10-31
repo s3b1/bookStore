@@ -23,6 +23,6 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Launch unit tests
-        run: --watch=false --reporters spec
+        run: ng test --watch=false --reporters spec
       - name: Launch e2e tests
         run: ng e2e
